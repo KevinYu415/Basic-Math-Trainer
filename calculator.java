@@ -30,17 +30,24 @@ class calculator{
             int min = 2;
             int correct = 0;
             int incorrect = 0;
+            int one;
+            int two;
+            long startTime;
+            long elapsedTime;
             for(int i = 0; i<Integer.valueOf(arr[0]); i++){
                 // System.out.println(i + "yes");
-                int one = (int)(Math.random()*max)+min;
-                int two = (int)(Math.random()*max)+min;
+                one = (int)(Math.random()*max)+min;
+                two = (int)(Math.random()*max)+min;
 
                 if(arr[1].equals("*")){
                     Scanner ans = new Scanner(System.in);
                     System.out.print("What is " + one + " * " + two + " = ");
+                    startTime = System.currentTimeMillis();
                     String answer = ans.nextLine();
+                    elapsedTime = ((System.currentTimeMillis() - startTime)/ 1000);    //timer
+                    // System.out.println("You took "+elapsedTime+" seconds");
                     if((one * two) == Integer.valueOf(answer)){
-                        System.out.println("correct \n");
+                        System.out.println("Correct, You took "+elapsedTime+" seconds \n");
                         correct++;
                     }else{
                         System.out.println("Incorrect, should be " + one * two + "\n");
@@ -49,21 +56,25 @@ class calculator{
                 }else if(arr[1].equals("+")){
                     Scanner ans = new Scanner(System.in);
                     System.out.print("What is " + one + " + " + two + " = ");
+                    startTime = System.currentTimeMillis();
                     String answer = ans.nextLine();
+                    elapsedTime = ((System.currentTimeMillis() - startTime)/ 1000);    //timer
                     if((one + two) == Integer.valueOf(answer)){
-                        System.out.println("correct \n");
+                        System.out.println("Correct, You took "+elapsedTime+" seconds \n");
                         correct++;
                     }else{
-                        System.out.println("Incorrect, should be " + one + two + "\n");
+                        System.out.println("Incorrect, should be " + (one + two) + "\n");
                         incorrect++;
                     }
                 }else if(arr[1].equals("-")){
                     Scanner ans = new Scanner(System.in);
                     System.out.print("What is " + one + " - " + two + " = ");
+                    startTime = System.currentTimeMillis();
                     String answer = ans.nextLine();
+                    elapsedTime = ((System.currentTimeMillis() - startTime)/ 1000);    //timer
                     int sub = one - two;
                     if((sub) == Integer.valueOf(answer)){
-                        System.out.println("correct \n");
+                        System.out.println("Correct, You took "+elapsedTime+" seconds \n");
                         correct++;
                     }else{
                         System.out.println("Incorrect, should be " + sub + "\n");
@@ -74,9 +85,11 @@ class calculator{
                 }else if(arr[1].equals("/")){
                     Scanner ans = new Scanner(System.in);
                     System.out.print("What is " + one + " / " + two + " = ");
+                    startTime = System.currentTimeMillis();
                     String answer = ans.nextLine();
+                    elapsedTime = ((System.currentTimeMillis() - startTime)/ 1000);    //timer
                     if((one / two) == Integer.valueOf(answer)){
-                        System.out.println("correct \n");
+                        System.out.println("Correct, You took "+elapsedTime+" seconds \n");
                         correct++;
                     }else{
                         System.out.println("Incorrect, should be " + one / two + "\n");
